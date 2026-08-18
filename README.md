@@ -6,8 +6,6 @@ A modern **Weather App built with Python and PyQt5** that allows users to search
 
 * 🌍 Search weather information by city
 * 🌡️ Display current temperature and weather conditions
-* 💧 Display humidity
-* 💨 Display wind speed and information
 * ☁️ Weather condition visualization
 * 🔄 Retrieve real-time weather data through an API
 * 🖥️ Clean and interactive **PyQt5 graphical user interface**
