@@ -47,4 +47,10 @@ This project was developed to practice **Python application development, PyQt5 G
 
 ---
 
+👨‍💻 Developer
+
+**Bakhouche Mohamed Qamar Eddine**
+
+---
+
 **Built with Python & PyQt5 🐍💙**
