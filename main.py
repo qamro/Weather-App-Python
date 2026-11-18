@@ -39,6 +39,33 @@ class WeatherApp (QWidget):
         self.temperature_label.setObjectName("temperature_label")
         self.emoji_label.setObjectName("emoji_label")
         self.description_label.setObjectName("description_label")
+        
+        self.setStyleSheet("""
+            #city_label {
+                font-size: 18px;
+                font-weight: bold;
+            }
+            #city_input {
+                font-size: 16px;
+                padding: 5px;
+            }
+            #get_weather_button {
+                font-size: 16px;
+                padding: 5px;
+                background-color: #0EA5E9;
+                color: white;
+            }
+            #temperature_label {
+                font-size: 16px;
+                font-weight: bold;
+            }
+            #emoji_label {
+                font-size: 48px;
+            }
+            #description_label {
+                font-size: 16px;
+            }
+        """)
 
 if __name__ == "__main__":
     app = QApplication(sys.argv) # this is for initializing the Qt application
