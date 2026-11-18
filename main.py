@@ -18,14 +18,14 @@ class WeatherApp (QWidget):
     def initUI(self):
         self.setWindowTitle("Qamro Weather App")
         
-        layout = QVBoxLayout()
-        layout.addWidget(self.city_label)
-        layout.addWidget(self.city_input)
-        layout.addWidget(self.get_weather_button)
-        layout.addWidget(self.temperature_label)
-        layout.addWidget(self.emoji_label)
-        layout.addWidget(self.description_label)
-        self.setLayout(layout)
+        virtual_box = QVBoxLayout()
+        virtual_box.addWidget(self.city_label)
+        virtual_box.addWidget(self.city_input)
+        virtual_box.addWidget(self.get_weather_button)
+        virtual_box.addWidget(self.temperature_label)
+        virtual_box.addWidget(self.emoji_label)
+        virtual_box.addWidget(self.description_label)
+        self.setLayout(virtual_box)
 
 
 if __name__ == "__main__":
