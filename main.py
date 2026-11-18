@@ -7,8 +7,21 @@ from PyQt5.QtCore import Qt
 class WeatherApp (QWidget):
     def __init__(self):
         super().__init__()
-        
-        
+        self.city_label = QLabel("Enter city name:", self)
+        self.city_input = QLineEdit(self)
+        self.get_weather_button = QPushButton("Get Weather", self)
+        self.temperature_label = QLabel("Weather will be displayed here.", self)
+        self.emoji_label = QLabel("☀️", self)
+        self.description_label = QLabel("Sunny", self)
+
+        layout = QVBoxLayout()
+        layout.addWidget(self.city_label)
+        layout.addWidget(self.city_input)
+        layout.addWidget(self.get_weather_button)
+        layout.addWidget(self.temperature_label)
+        layout.addWidget(self.emoji_label)
+        layout.addWidget(self.description_label)
+        self.setLayout(layout)
 
 
 if __name__ == "__main__":
