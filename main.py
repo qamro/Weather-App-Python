@@ -14,6 +14,10 @@ class WeatherApp (QWidget):
         self.emoji_label = QLabel("☀️", self)
         self.description_label = QLabel("Sunny", self)
 
+    
+    def initUI(self):
+        self.setWindowTitle("Qamro Weather App")
+        
         layout = QVBoxLayout()
         layout.addWidget(self.city_label)
         layout.addWidget(self.city_input)
