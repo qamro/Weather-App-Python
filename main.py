@@ -27,9 +27,22 @@ class WeatherApp (QWidget):
         virtual_box.addWidget(self.description_label)
         self.setLayout(virtual_box)
 
+        self.city_label.setAlignment(Qt.AlignCenter)
+        self.city_input.setAlignment(Qt.AlignCenter)
+        self.temperature_label.setAlignment(Qt.AlignCenter)
+        self.emoji_label.setAlignment(Qt.AlignCenter)
+        self.description_label.setAlignment(Qt.AlignCenter)
+        
+        self.city_label.setObjectName("city_label")
+        self.city_input.setObjectName("city_input")
+        self.get_weather_button.setObjectName("get_weather_button")
+        self.temperature_label.setObjectName("temperature_label")
+        self.emoji_label.setObjectName("emoji_label")
+        self.description_label.setObjectName("description_label")
 
 if __name__ == "__main__":
     app = QApplication(sys.argv) # this is for initializing the Qt application
     weather_app = WeatherApp()
+    weather_app.initUI()
     weather_app.show()
     sys.exit(app.exec_()) # this is for exiting the application when the window is closed
