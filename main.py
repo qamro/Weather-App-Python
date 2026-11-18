@@ -66,6 +66,16 @@ class WeatherApp (QWidget):
                 font-size: 16px;
             }
         """)
+        
+        
+    def Get_Weather(self):
+        pass
+    
+    def display_error(self, message):
+        pass
+    
+    def display_weather(self, data):
+        pass
 
 if __name__ == "__main__":
     app = QApplication(sys.argv) # this is for initializing the Qt application
