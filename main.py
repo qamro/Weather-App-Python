@@ -126,11 +126,23 @@ class WeatherApp (QWidget):
         self.temperature_label.setText(message)
 
     def display_weather(self, data):
-        pass
+        self.temperature_label.setStyleSheet("font-size: 75px;")
+        temperature_kelven = data["main"]["temp"]
+        temperature_celsius = temperature_kelven - 273.15
+        weather_description = data["weather"][0]["description"]
+        weather_id = data["weather"][0]["id"]
+        
+        self.temperature_label.setText(f"{temperature_celsius:.0f}°C")
+        self.emoji_label.setText(self.get_weather_emoji(weather_id))
+        self.description_label.setText(weather_description)
+    
+    
+    @staticmethod
+    def get_weather_emoji(weather_id)
+        
 
 if __name__ == "__main__":
     app = QApplication(sys.argv) # this is for initializing the Qt application
     weather_app = WeatherApp()
-    weather_app.initUI()
     weather_app.show()
     sys.exit(app.exec_()) # this is for exiting the application when the window is closed
