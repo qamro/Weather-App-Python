@@ -16,8 +16,9 @@ class WeatherApp (QWidget):
 
     
     def initUI(self):
-        self.setWindowTitle("Qamro Weather App")
+        self.setWindowTitle("Qamro Weather App") # set a title to the app's window
         
+        # Create a vertical layout to organize the widgets
         virtual_box = QVBoxLayout()
         virtual_box.addWidget(self.city_label)
         virtual_box.addWidget(self.city_input)
@@ -27,12 +28,14 @@ class WeatherApp (QWidget):
         virtual_box.addWidget(self.description_label)
         self.setLayout(virtual_box)
 
+        # centralize (align) the different widgets
         self.city_label.setAlignment(Qt.AlignCenter)
         self.city_input.setAlignment(Qt.AlignCenter)
         self.temperature_label.setAlignment(Qt.AlignCenter)
         self.emoji_label.setAlignment(Qt.AlignCenter)
         self.description_label.setAlignment(Qt.AlignCenter)
         
+        # set object names for styling
         self.city_label.setObjectName("city_label")
         self.city_input.setObjectName("city_input")
         self.get_weather_button.setObjectName("get_weather_button")
@@ -40,6 +43,7 @@ class WeatherApp (QWidget):
         self.emoji_label.setObjectName("emoji_label")
         self.description_label.setObjectName("description_label")
         
+        # set the stylesheet for the widgets
         self.setStyleSheet("""
             #city_label {
                 font-size: 18px;
