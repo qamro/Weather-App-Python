@@ -71,9 +71,16 @@ class WeatherApp (QWidget):
             }
         """)
         
+        # connect the button click event to the get_weather method
+        self.get_weather_button.clicked.connect(self.get_weather)
         
-    def Get_Weather(self):
-        pass
+    def get_weather(self):
+        
+        api_key = "82fa68f18a96d9d746b6489c1c6a1123"
+        city = self.city_input.text()
+        url = f"https://api.openweathermap.org/data/2.5/weather?q={city}&appid={api_key}"
+        
+        response = requests.get(url)
     
     def display_error(self, message):
         pass
