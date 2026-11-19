@@ -80,8 +80,45 @@ class WeatherApp (QWidget):
         city = self.city_input.text()
         url = f"https://api.openweathermap.org/data/2.5/weather?q={city}&appid={api_key}"
         
-        response = requests.get(url)
-    
+        # get our data and handle all the exceptions(http responses)
+        try:
+            response = requests.get(url)
+            response.raise_for_status() # raise the HTTPexceptions cuz normally try alone cant do that
+            data = response.json()
+        
+            if data["cod"] == 200:
+                self.display_weather(data)
+        except requests.exceptions.HTTPerror: # to handle all the http errors
+            match response.status_code:
+                case 400:
+                    print("Bad request\nPlease check your input")
+                case 401:
+                    print("Unauthorized \n Invalid API Key")
+                case 402:
+                    print("Payment required \n Payment Required")
+                case 403:
+                    print("Forbidden \n Access is denied")                
+                case 404:
+                    print("Not Found \n City not found")
+                case 500:
+                    print("Internal server error \n Please try again later")
+                case 502:
+                    print("Bad Gateway \n Invalid response from the server")
+                case 503:
+                    print("Service Unavailable \n Server is down")
+                case 504:
+                    print("Gateway Timeout \n No response from the server")
+                case _:
+                    print("HTTP error occurred!!")
+        except requests.exceptions.ConnectionError:
+            print("Connection error: \n Check your internet connection")
+        except requests.exceptions.Timeout: 
+            print("Timeout error: \n The request timed out")
+        except requests.exceptions.TooManyRedirects: 
+            print("Too many redirects: \n Check the URL")
+        except requests.exceptions.RequestException: # to handle network errors, invalid url... these kinda exceptions
+            print("Request error: \n An error occurred while making the request")
+
     def display_error(self, message):
         pass
     
