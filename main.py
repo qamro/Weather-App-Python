@@ -171,6 +171,8 @@ class WeatherApp (QWidget):
         else:
             return "❓"
 
+
+
 if __name__ == "__main__":
     app = QApplication(sys.argv) # this is for initializing the Qt application
     weather_app = WeatherApp()
